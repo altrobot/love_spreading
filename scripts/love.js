@@ -5,9 +5,9 @@ var max_num_images = 0;
 var msg_idx = 0;
 var img_idx = 0;
 var img_list = [
-    '../images/bg001.jpg',
-    '../images/bg002.jpg',
-    '../images/bg003.jpg'
+    '/images/bg001.jpg',
+    '/images/bg002.jpg',
+    '/images/bg003.jpg'
 ];
 
 // history page 
