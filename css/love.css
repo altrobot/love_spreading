@@ -8,7 +8,7 @@
 
 .ui-page {
 /*    background : transparent url('../images/background.jpg');  */
-    background-image: url('../images/background.jpg');
+    background-image: url('images/background.jpg');
     background-size : cover;
 }
 
@@ -29,10 +29,10 @@ div[data-role=content] {
     height: 400px;
 }
 
-div[data-role=content] > div {
+#message {
     position: absolute;
-    left: 150px;
-    top: 250px;
+    left: 100px;
+    top: 150px;
     width: 400px;
     font-size: large;
     color: #4cff00;
@@ -83,7 +83,7 @@ div[data-type=vertical] {
 }
 
 /* Set the background image sources */
-#test1 { background-image: url(../images/test1.png); }
-#test2 { background-image: url(../images/test2.png); }
-#test3 { background-image: url(../images/test3.png); }
+#test1 { background-image: url(images/test1.png); }
+#test2 { background-image: url(images/test2.png); }
+#test3 { background-image: url(images/test3.png); }
 
