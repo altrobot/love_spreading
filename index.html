@@ -1,1 +1,194 @@
-<!DOCTYPE html> <html> <head>     <title>Love All</title>     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />       <meta charset="eur-kr" />     <link rel="stylesheet" href="css/love.css" />     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>     <script type="text/javascript" src="scripts/jquery.touchSwipe.min.js"></script>     <script type='text/javascript' src="scripts/love.js"></script>    </head>  <body>     <audio src="images/music.mp3" id="music" autoplay loop></audio>     <!-- main page -->     <div data-role="page" id="main_page">         <div data-role="header">         </div>          <div data-role="content" id="background_img">              <img src="images/love1.png" id="love_img"/>             <div id="message">             </div>         </div>          <div data-role="controlgroup" class="hcontrol ui-btn-left"  data-type="horizontal" data-mini="true">             <a href="#" class="prev" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="d">Previous</a>             <a href="#" class="next" data-role="button" data-icon="arrow-r" data-iconpos="notext" data-theme="d">Next</a>         </div>          <div data-role="controlgroup" class="vcontrol ui-btn-right"  data-type="vertical" data-mini="true">             <a href="#" class="prev" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-theme="d">Previous</a>             <a href="#" class="next" data-role="button" data-icon="arrow-d" data-iconpos="notext" data-theme="d">Next</a>         </div>          <a href="#" id="send" data-role="button" data-mini="true" data-inline="true" data-theme="a">Send</a>          <!-- rear camera         <video id="video" width="320" height="240"></video> -->          <div data-role="footer" id="footer" data-theme="b" data-position="fixed">             <div data-role="navbar" id="navigation">                 <ul>                     <li><a href="#" data-target="main" data-icon="home" id="main" class="ui-btn-active"></a></li>                     <li><a href="#search_page" data-target="search" data-icon="search" id="search"></a></li>                     <li><a href="#history_page" data-target="info" data-icon="info" id="info"></a></li>                     <li><a href="#settings_page" data-target="settings" data-icon="gear" id="settings"></a></li>                 </ul>             </div>                  </div>     </div>      <!-- search page -->     <div data-role="page" id="search_page">         <div data-role="header">         </div>         <div data-role="content">             <ul data-role="listview" id="msg_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="d" data-filter-placeholder="Search messages ...">             </ul>         </div>                  <div data-role="footer" id="footer" data-theme="b" data-position="fixed">                 <div data-role="navbar" id="navigation">                     <ul>                         <li><a href="#main_page" data-target="main" data-icon="home" id="main"></a></li>                         <li><a href="#" data-target="search" data-icon="search" id="search" class="ui-btn-active"></a></li>                         <li><a href="#history_page" data-target="info" data-icon="info" id="info"></a></li>                         <li><a href="#settings_page" data-target="settings" data-icon="gear" id="settings"></a></li>                     </ul>                 </div>             </div>         </div>      <!-- history page -->     <div data-role="page" id="history_page">         <div data-role="header">         </div>          <div data-role="content">             <ul data-role="listview" id="hist_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="d" data-filter-placeholder="Search names ...">             </ul>         </div>          <!-- confirm popup -->         <div id="confirm" class="ui-content" data-role="popup" data-theme="none">             <p id="question">Are you sure you want to delete?</p>             <div class="ui-grid-a">                 <div class="ui-block-a">                     <a id="yes" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Yes</a>                 </div>                 <div class="ui-block-b">                     <a id="cancel" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Cancel</a>                 </div>             </div>         </div><!-- /popup -->          <div data-role="footer" id="footer" data-theme="b" data-position="fixed">             <div data-role="navbar" id="navigation">                 <ul>                     <li><a href="#main_page" data-target="main" data-icon="home" id="main"></a></li>                     <li><a href="#search_page" data-target="search" data-icon="search" id="search"></a></li>                     <li><a href="#" data-target="info" data-icon="info" id="info" class="ui-btn-active"></a></li>                     <li><a href="#settings_page" data-target="settings" data-icon="gear" id="settings"></a></li>                 </ul>             </div>         </div>         </div>          <!-- setting page -->         <div data-role="page" id="settings_page">             <div data-role="header">             </div>             <div data-role="content">                  <ul data-role="listview" data-inset="true">                     <li data-role="list-divider">Settings</li>                     <li class="ui-field-contain">                         <label for="flip-select-second">Music:</label>                         <select id="flip-select-second" name="flip-select" data-role="flipswitch">                             <option>Off</option>                             <option selected="">On</option>                         </select>                     </li>                     <li><a href="#">硫붿꽭吏 怨듭쑀?섍린</a></li>                     <li>                         <a href="#" id="delete_history" data-role="button" data-icon="alert" data-corners="false" data-theme="a">History ?꾩껜 ??젣</a>                     </li>                     <li data-role="list-divider">媛쒕컻??硫붿꽭吏</li>                     <li>                         <p>                             ?щ엺?ㅼ? ?щ옉??紐⑸쭚???쒕떎. ?섏?留??쒗쁽???쒗닾瑜닿굅???쒗쁽?섏? ?딅뒗??                             ?묒? ?щ옉 硫붿꽭吏瑜?二쇨퀬 諛쏆븘???щ옉??媛먯젙???먮굜 ???덈떎. ?щ옉??媛먯젙????吏援щ줈 ?곗＜濡??쇱졇?섍컙??                         </p>                     </li>                     <li data-role="list-divider">?ъ슜踰?/li>                     <li>                         <p>蹂대궡???щ엺???좎삱??遊낅땲?? 蹂대궡怨좎옄?섎뒗 硫붿떆吏瑜??좏깮???꾩뿉, ?꾩넚?⑸땲??</p>                     </li>                     <li data-role="list-divider">湲곕?</li>                     <li>                         <p>湲곕????닿납???대┃??二쇱꽭??</p>                     </li>                 </ul>                          </div>              <!-- confirm popup -->             <div id="confirm2" class="ui-content" data-role="popup" data-theme="none">                 <p id="question">Are you sure you want to delete?</p>                 <div class="ui-grid-a">                     <div class="ui-block-a">                         <a id="yes" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Yes</a>                     </div>                     <div class="ui-block-b">                         <a id="cancel" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Cancel</a>                     </div>                 </div>             </div><!-- /popup -->              <div data-role="footer" id="footer" data-theme="b" data-position="fixed">                 <div data-role="navbar" id="navigation">                     <ul>                         <li><a href="#main_page" data-target="main" data-icon="home" id="main"></a></li>                         <li><a href="#search_page" data-target="search" data-icon="search" id="search"></a></li>                         <li><a href="#history_page" data-target="info" data-icon="info" id="info"></a></li>                         <li><a href="#" data-target="settings" data-icon="gear" id="settings" class="ui-btn-active"></a></li>                     </ul>                 </div>             </div>         </div>   </body> </html>   
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Love All</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />  
+    <meta charset="eur-kr" />
+    <link rel="stylesheet" href="css/love.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.touchSwipe.min.js"></script>
+    <script type='text/javascript' src="scripts/love.js"></script>   
+</head>
+
+<body>
+    <audio src="images/music.mp3" id="music" autoplay loop></audio>
+    <!-- main page -->
+    <div data-role="page" id="main_page">
+        <div data-role="header">
+        </div>
+
+        <div data-role="content" id="background_img"> 
+            <img src="images/love1.png" id="love_img"/>
+            <div id="message">
+            </div>
+        </div>
+
+        <div data-role="controlgroup" class="hcontrol ui-btn-left"  data-type="horizontal" data-mini="true">
+            <a href="#" class="prev" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="d">Previous</a>
+            <a href="#" class="next" data-role="button" data-icon="arrow-r" data-iconpos="notext" data-theme="d">Next</a>
+        </div>
+
+        <div data-role="controlgroup" class="vcontrol ui-btn-right"  data-type="vertical" data-mini="true">
+            <a href="#" class="prev" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-theme="d">Previous</a>
+            <a href="#" class="next" data-role="button" data-icon="arrow-d" data-iconpos="notext" data-theme="d">Next</a>
+        </div>
+
+        <a href="#" id="send" data-role="button" data-mini="true" data-inline="true" data-theme="a">Send</a>
+
+        <!-- rear camera
+        <video id="video" width="320" height="240"></video> -->
+
+        <div data-role="footer" id="footer" data-theme="b" data-position="fixed">
+            <div data-role="navbar" id="navigation">
+                <ul>
+                    <li><a href="#" data-target="main" data-icon="home" id="main" class="ui-btn-active"></a></li>
+                    <li><a href="#search_page" data-target="search" data-icon="search" id="search"></a></li>
+                    <li><a href="#history_page" data-target="info" data-icon="info" id="info"></a></li>
+                    <li><a href="#settings_page" data-target="settings" data-icon="gear" id="settings"></a></li>
+                </ul>
+            </div>         
+        </div>
+    </div>
+
+    <!-- search page -->
+    <div data-role="page" id="search_page">
+        <div data-role="header">
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" id="msg_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="d" data-filter-placeholder="Search messages ...">
+            </ul>
+        </div>
+        
+        <div data-role="footer" id="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" id="navigation">
+                    <ul>
+                        <li><a href="#main_page" data-target="main" data-icon="home" id="main"></a></li>
+                        <li><a href="#" data-target="search" data-icon="search" id="search" class="ui-btn-active"></a></li>
+                        <li><a href="#history_page" data-target="info" data-icon="info" id="info"></a></li>
+                        <li><a href="#settings_page" data-target="settings" data-icon="gear" id="settings"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    <!-- history page -->
+    <div data-role="page" id="history_page">
+        <div data-role="header">
+        </div>
+
+        <div data-role="content">
+            <ul data-role="listview" id="hist_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="d" data-filter-placeholder="Search names ...">
+                <li>
+                    <a href=" #">
+                        <h3>JS</h3>
+                        <p>1이세상에서 당신보다 멋있는 사람은 없습니다.</p>
+                        <p class="ui-li-aside"><strong>2015년 3월 11일</strong></p>
+                        <span class="ui-li-count">109</span>
+                    </a>
+                    <a href="#" data-icon="delete">Delete</a>
+                </li>
+                <li>
+                    <a href=" #">
+                        <h3>NS</h3>
+                        <p>2이세상에서 당신보다 멋있는 사람은 없습니다.</p>
+                        <p class="ui-li-aside"><strong>2015년 3월 11일</strong></p>
+                        <span class="ui-li-count">129</span>
+                    </a>
+                    <a href="#" data-icon="delete"></a>
+                </li> 
+            </ul>
+        </div>
+
+        <!-- confirm popup -->
+        <div id="confirm" class="ui-content" data-role="popup" data-theme="none">
+            <p id="question">Are you sure you want to delete?</p>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a id="yes" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Yes</a>
+                </div>
+                <div class="ui-block-b">
+                    <a id="cancel" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Cancel</a>
+                </div>
+            </div>
+        </div><!-- /popup -->
+
+        <div data-role="footer" id="footer" data-theme="b" data-position="fixed">
+            <div data-role="navbar" id="navigation">
+                <ul>
+                    <li><a href="#main_page" data-target="main" data-icon="home" id="main"></a></li>
+                    <li><a href="#search_page" data-target="search" data-icon="search" id="search"></a></li>
+                    <li><a href="#" data-target="info" data-icon="info" id="info" class="ui-btn-active"></a></li>
+                    <li><a href="#settings_page" data-target="settings" data-icon="gear" id="settings"></a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+
+        <!-- setting page -->
+        <div data-role="page" id="settings_page">
+            <div data-role="header">
+            </div>
+            <div data-role="content"> 
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Settings</li>
+                    <li class="ui-field-contain">
+                        <label for="flip-select-second">Music:</label>
+                        <select id="flip-select-second" name="flip-select" data-role="flipswitch">
+                            <option>Off</option>
+                            <option selected="">On</option>
+                        </select>
+                    </li>
+                    <li><a href="#">메세지 공유하기</a></li>
+                    <li>
+                        <a href="#" id="delete_history" data-role="button" data-icon="alert" data-corners="false" data-theme="a">History 전체 삭제</a>
+                    </li>
+                    <li data-role="list-divider">개발자 메세지</li>
+                    <li>
+                        <p>
+                            사람들은 사랑에 목말라 한다. 하지만 표현이 서투르거나 표현하지 않는다.
+                            작은 사랑 메세지를 주고 받아도 사랑의 감정을 느낄 수 있다. 사랑의 감정이 온 지구로 우주로 퍼져나간다.
+                        </p>
+                    </li>
+                    <li data-role="list-divider">사용법</li>
+                    <li>
+                        <p>보내는 사람을 떠올려 봅니다. 보내고자하는 메시지를 선택한 후에, 전송합니다.</p>
+                    </li>
+                    <li data-role="list-divider">기부</li>
+                    <li>
+                        <p>기부는 이곳을 클릭해 주세요.</p>
+                    </li>
+                </ul>             
+            </div>
+
+            <!-- confirm popup -->
+            <div id="confirm2" class="ui-content" data-role="popup" data-theme="none">
+                <p id="question">Are you sure you want to delete?</p>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a id="yes" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Yes</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a id="cancel" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Cancel</a>
+                    </div>
+                </div>
+            </div><!-- /popup -->
+
+            <div data-role="footer" id="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" id="navigation">
+                    <ul>
+                        <li><a href="#main_page" data-target="main" data-icon="home" id="main"></a></li>
+                        <li><a href="#search_page" data-target="search" data-icon="search" id="search"></a></li>
+                        <li><a href="#history_page" data-target="info" data-icon="info" id="info"></a></li>
+                        <li><a href="#" data-target="settings" data-icon="gear" id="settings" class="ui-btn-active"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+</html>
+
+
