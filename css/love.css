@@ -24,6 +24,11 @@ div[data-role=content] {
         */
 }
 
+#love_img {
+    width: 400px;
+    height: 400px;
+}
+
 div[data-role=content] > div {
     position: absolute;
     left: 150px;
@@ -37,13 +42,13 @@ div[data-role=content] > div {
 div[data-type=horizontal] {
     position: absolute;
     left: 20px;
-    top: 400px;
+    top: 300px;
 }
 
 div[data-type=vertical] {
     position: absolute;
     right: 100px;
-    top: 400px;
+    top: 300px;
 }
 
 #navigation {
