@@ -15,7 +15,7 @@ var hist_idx = 0;
 
 $(document).on("pageinit", "#main_page", function ()
 {
-    $.get('../messages/love1.csv', function (data) {
+    $.get('messages/love1.csv', function (data) {
         messages = data.split("\n");
         // max number of messages
         max_num_messages = messages.length;
