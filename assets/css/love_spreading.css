@@ -1,0 +1,75 @@
+/******************** main page style ***********************/
+/* main page background image */
+#main_page {
+    background-image: url('../img/bg_001.jpg');
+    background-size : cover;
+}
+
+/* arrow and send buttons */
+#button_group {
+/*    width: 210px;
+    margin: 0 auto; */
+    text-align: center
+}
+/* main image positining*/
+#main_img {
+    position:absolute;
+    width: 500px;
+    top: 150px;
+/*    text-align: center  */
+}
+
+#message_box {
+    position: absolute;
+    left: 90px;
+    top: 320px;
+    width: 370px;
+    font-size: large;
+    color: #4cff00;
+}
+
+/******************** search page style ***********************/
+/* search page background image */
+#search_page.ui-page {
+    background-image: url('../img/bg_search.jpg');
+    background-size : cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+/******************** history page style ***********************/
+/* history page background image */
+#history_page.ui-page {
+    background-image: url('../img/bg_history.jpg');
+    background-size : cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+/******************** settings page style ***********************/
+/* settings page background image */
+#settings_page.ui-page {
+    background-image: url('../img/bg_settings.jpg');
+    background-size : cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.less{
+    word-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.more{
+    white-space: normal;
+}
+
+.more-less-text{
+    display: block;
+    text-align: right;
+    padding-top: 10px;
+    color: blue !important;
+    cursor: pointer;
+}
