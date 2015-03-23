@@ -14,17 +14,18 @@
 /* main image positining*/
 #main_img {
     position:absolute;
-    width: 500px;
-    top: 150px;
+    width: 380px;
+    top: 100px;
+    left: 7px;
 /*    text-align: center  */
 }
 
 #message_box {
     position: absolute;
-    left: 90px;
-    top: 320px;
-    width: 370px;
-    font-size: large;
+    left: 45px;
+    top: 225px;
+    width: 310px;
+    font-size: medium;
     color: #4cff00;
 }
 
