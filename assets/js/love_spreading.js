@@ -289,6 +289,17 @@ function confirmAndDelete(listitem, transition) {
 
 /* settings pape */
 $(document).on("pageinit", "#settings_page", function () {
+    // handling music on/off slide event
+    $('[data-role="flipswitch"]').on("change", function () {
+        var val = $(this).val();
+        if (val == 'Off') {
+            $('body > audio').trigger('pause');
+        }
+        else if (val == 'On') {
+            $('body > audio').trigger('play');
+        }
+    });
+
     // history delete event handling
     $('#delete_history').on("click", function (event) {
         $('#confirm_delete_all').popup();
