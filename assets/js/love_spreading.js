@@ -1,4 +1,4 @@
-
+ï»¿
 // global variable
 var messages='';
 var max_num_messages = 0;
@@ -106,8 +106,8 @@ $(document).on("pageinit", "#main_page", function () {
         var _receiver= "Love"
         var _msg = messages[msg_idx];
         var today = new Date();
-        var _date = today.getFullYear() + '³â ' + (today.getMonth() + 1) + '¿ù ' +
-                         today.getDate() + 'ÀÏ';
+        var _date = today.getFullYear() + 'ë…„ ' + (today.getMonth() + 1) + 'ì›” ' +
+                         today.getDate() + 'ì¼';
         // save the history record to json file
          var record = {
             id: hist_idx,
@@ -153,7 +153,7 @@ function readMessages() {
     $.ajax({
         async: false,
         type: 'GET',
-        url: '../assets/data/messages_01.csv',
+        url: 'assets/data/messages_01.csv',
         success: function (data) {
             // split the data in rows
             messages= data.split("\n");
