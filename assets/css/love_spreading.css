@@ -14,7 +14,7 @@
 /* main image positining*/
 #main_img {
     position:absolute;
-    width: 380px;
+    width: 360px;
     top: 100px;
     left: 7px;
 /*    text-align: center  */
@@ -24,7 +24,7 @@
     position: absolute;
     left: 45px;
     top: 225px;
-    width: 310px;
+    width: 300px;
     font-size: medium;
     color: #4cff00;
 }
