@@ -218,7 +218,7 @@ $(document).on("pageinit", "#history_page", function () {
             hist_idx++;
             // write the list content    
             $('#hist_list').append(output);
-            $("#hist_list").listview("refresh");
+            $("#hist_list").listview().listview("refresh");
         }
     }
 
