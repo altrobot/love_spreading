@@ -121,7 +121,7 @@ $(document).on("pageinit", "#main_page", function () {
         // write the record to the history list    
         output += '<li id="hist_idx' + hist_idx + '"><a href=" #"><h3>' + _receiver + '</h3><p>' + _msg + '</p><p class="ui-li-aside"><strong>' + _date + '</strong></p></a><a href="#" class="delete" data-icon="delete">Delete</a></li>';
         $('#hist_list').append(output);
-        $("#hist_list").listview("refresh");
+        $("#hist_list").listview().listview("refresh");
 
         // detach all events and re-attach the click handler
         $('.delete').off("click", onDeleteClicked);
@@ -134,7 +134,11 @@ $(document).on("pageinit", "#main_page", function () {
         hist_idx++;
     });
 
-
+    
+    $('#send').socialShare({
+        social: 'facebook,google,twitter',
+    });
+    
 });
 
 // load background images
