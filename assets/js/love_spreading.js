@@ -233,7 +233,7 @@ $(document).on("pageinit", "#history_page", function () {
 });
 
 /*
- * user function to handle click event for .delte class
+ * user function to handle click event for .delete class
  * this function is called when the user clicks the "send" button to dynamicall add event handler
  */
 function onDeleteClicked( event, ui ) {
@@ -320,9 +320,23 @@ $(document).on("pageinit", "#settings_page", function () {
     // more-less event
     $('.more-less-text').on("click", function () {
         if ($(this).html() == "More...") {
+            // get the list > div
+            $(this).parent().children(':first-child').addClass("more");
+            $(this).parent().children(':first-child').removeClass("less");
+            $(this).html("Less...");
+        }
+        else {
+            $(this).parent().children(':first-child').addClass("less");
+            $(this).parent().children(':first-child').removeClass("more");
+            $(this).html("More...");
+        }
+    });
+    /*
+    $('.more-less-text').on("click", function () {
+        if ($(this).html() == "More...") {
             $('#developer > div').addClass("more");
             $('#developer > div').removeClass("less");
-            $(this).html("Less...");
+            $(this).html("Less..."); 
         }
         else {
             $('#developer > div').addClass("less");
@@ -330,6 +344,8 @@ $(document).on("pageinit", "#settings_page", function () {
             $(this).html("More...");
         }
     });
+    */
+
 });
 
 /**
