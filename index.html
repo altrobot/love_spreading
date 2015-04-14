@@ -63,7 +63,7 @@
         <!-- contents -->
         <div data-role="content">
             <!-- message list -->
-            <ul data-role="listview" id="msg_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="d" data-filter-placeholder="Search messages ...">
+            <ul data-role="listview" id="msg_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search messages ...">
             </ul>
         </div>
         <!-- footer -->
@@ -87,7 +87,7 @@
         <!-- contents -->
         <div data-role="content">
             <!-- history list -->
-            <ul data-role="listview" id="hist_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="d" data-filter-placeholder="Search names ...">           
+            <ul data-role="listview" id="hist_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search names ...">           
             </ul>
         </div>
         <!-- confirm popup -->
@@ -143,13 +143,18 @@
                     <li data-role="list-divider">사용법</li>
                     <li id="usage">
                         <div class="less">
-                                보내는 사람을 떠올려 봅니다. 보내고자하는 메시지를 선택한 후에, 전송합니다. 만트라를 외쳐보세요. 사랑합니다. 감사합니다. 용서합니다. 믿습니다.
+                                메시지를 천천히 읽어보며 사랑의 감정을 느낍니다. 메시지 받을 사람을 떠올려 봅니다. 보내고자하는 메시지를 선택한 후에, 전송합니다. 만트라를 외쳐보세요. 사랑합니다. 감사합니다. 용서합니다. 믿습니다.
                         </div>
                         <div class="more-less-text">More...</div>  
                     </li>                    
-                    <li data-role="list-divider">기부</li>
-                    <li>
-                        기부는 이곳을 클릭해 주세요.
+                    <li data-role="list-divider">기부하기</li>
+                    <li> 개발자에게 금전적 사랑을 보내실분은 클릭하세요.                                                                 
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="PJLA8DNZ8NWPS">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                        </form>
                     </li>
                 </ul>             
             </div>

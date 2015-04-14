@@ -163,8 +163,31 @@ function readMessages() {
             messages= data.split("\n");
             // max number of messages
             max_num_messages = messages.length;
+            // draw a random index
+            // msg_idx = Math.floor(Math.random() * (max_num_messages - 1));
+            // shuffle all messages
+            messages= shuffle(messages);
         }
     });
+}
+
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
 }
 
 /******** search page ***********************/

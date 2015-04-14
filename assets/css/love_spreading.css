@@ -27,8 +27,9 @@
     height: 50%;
     width: 80%;
     text-align: center;
-    font-size: medium;
-    color: #4cff00;
+    font-size: large;
+    color: #4cff00; 
+/*    color: #ffffff; */
 }
 
 /******************** search page style ***********************/
@@ -75,4 +76,8 @@
     padding-top: 10px;
     color: blue !important;
     cursor: pointer;
+}
+
+#paypal {
+    float: right;
 }
