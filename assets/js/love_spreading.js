@@ -146,17 +146,22 @@ $(document).on("pageinit", "#main_page", function () {
 
 
 function shareViaKakao() {
-    var curURL = location.href;
-    var curTitle = document.getElementsByTagName("TITLE")[0].text;
-    alert("kakao tagname: " + curTitle );
-    kakao.link("talk").send ({
-        msg : curTitle,
-        url : curURL,
-        appid : "본인블로그주소.tistory.com",
-        appver : "1.0",
-        appname : "블로그 제목",
-        type : "link"
-    });
+    Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
+    Kakao.Link.createTalkLinkButton ({
+        container: '#kakao-link-btn',
+        label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + contents + '...',
+        /*
+        image: {
+            src: firstImgSrc,
+            width: '300',
+            height: parseInt(300 * firstImgRatio)
+        },
+        */
+        webButton: {
+            text: '웹페이지 방문하기',
+            url: "http://altrobot.github.io/love_spreading"
+        }
+    })
 }
 
 
