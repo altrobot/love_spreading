@@ -134,12 +134,36 @@ $(document).on("pageinit", "#main_page", function () {
         hist_idx++;
     });
 
+    $("#ktalk").on('click', function (event) {
+        shareViaKakao();
+    });
     
     $('#send').socialShare({
         social: 'facebook,google,twitter',
     });
     
 });
+
+
+function shareViaKakao() {
+    var curURL = location.href;
+    var curTitle = document.getElementsByTagName("TITLE")[0].text;
+    alert("kakao tagname: " + curTitle );
+    kakao.link("talk").send ({
+        msg : curTitle,
+        url : curURL,
+        appid : "본인블로그주소.tistory.com",
+        appver : "1.0",
+        appname : "블로그 제목",
+        type : "link"
+    });
+}
+
+
+$(document).ready(function(){
+
+});
+
 
 // load background images
 function preload(arrayOfImages) {
