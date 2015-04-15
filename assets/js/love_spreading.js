@@ -16,6 +16,8 @@ var hist_idx = 0;
 var hist_data = {};
 var max_num_images = 0;
 
+var screenshot = new Image();
+
 /******** main page ***********************/
 // @todo mobileinit is not working? why?
 $(document).on("pageinit", "#main_page", function () {
@@ -134,7 +136,13 @@ $(document).on("pageinit", "#main_page", function () {
         // $('[data-icon="delete"]').trigger("updatelayout");
 
         // update the history index
-        hist_idx++;         
+        hist_idx++;
+
+        // @test screenshot
+        html2canvas(document.body).then(function (canvas) {
+            screenshot.src = canvas.toDataURL("image/png");
+            window.open(screenshot.src);
+        });
     });
 
     Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
@@ -151,21 +159,14 @@ $(document).on("pageinit", "#main_page", function () {
 
 
 function shareViaKakao() {
-    // @test screenshot
-    /*
-    var screenshot = new Image();
-    html2canvas(document.body).then(function (canvas) {
-        screenshot.src = canvas.toDataURL("image/png");
-    });
-    */
     Kakao.Link.createTalkLinkButton({
         container: '#kakao-link-btn',
         label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx],
-/*        image: {
+        image: {
             src: screenshot.src,
             width: '300',
             height: '300'
-        }, */
+        }, 
         webButton: {
             text: '웹페이지 방문하기',
             url: "http://altrobot.github.io/love_spreading"
