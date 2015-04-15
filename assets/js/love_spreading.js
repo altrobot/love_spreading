@@ -106,7 +106,7 @@ $(document).on("pageinit", "#main_page", function () {
         // override the default handler
         event.preventDefault();
         var output = "";
-        var _receiver= "Love"
+        var _receiver= "Love Spreading"
         var _msg = messages[msg_idx];
         var today = new Date();
         var _date = today.getFullYear() + '년 ' + (today.getMonth() + 1) + '월 ' +
@@ -134,7 +134,7 @@ $(document).on("pageinit", "#main_page", function () {
         // $('[data-icon="delete"]').trigger("updatelayout");
 
         // update the history index
-        hist_idx++;
+        hist_idx++;         
     });
 
     Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
@@ -151,16 +151,20 @@ $(document).on("pageinit", "#main_page", function () {
 
 
 function shareViaKakao() {
-    Kakao.Link.createTalkLinkButton ({
+    // @test screenshot
+    var screenshot = new Image();
+    html2canvas(document.body).then(function (canvas) {
+        screenshot.src = canvas.toDataURL("image/png");
+    });
+
+    Kakao.Link.createTalkLinkButton({
         container: '#kakao-link-btn',
-        label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx] + '...',
-        /*
+        label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx],
         image: {
-            src: firstImgSrc,
+            src: screenshot.src,
             width: '300',
-            height: parseInt(300 * firstImgRatio)
+            height: '300'
         },
-        */
         webButton: {
             text: '웹페이지 방문하기',
             url: "http://altrobot.github.io/love_spreading"
@@ -391,21 +395,6 @@ $(document).on("pageinit", "#settings_page", function () {
             $(this).html("More...");
         }
     });
-    /*
-    $('.more-less-text').on("click", function () {
-        if ($(this).html() == "More...") {
-            $('#developer > div').addClass("more");
-            $('#developer > div').removeClass("less");
-            $(this).html("Less..."); 
-        }
-        else {
-            $('#developer > div').addClass("less");
-            $('#developer > div').removeClass("more");
-            $(this).html("More...");
-        }
-    });
-    */
-
 });
 
 /**

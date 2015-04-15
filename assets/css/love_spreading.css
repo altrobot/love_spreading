@@ -59,6 +59,10 @@
     height: 100%;
 }
 
+#delete_history {
+    color: #ff0000;
+}
+
 .less{
     word-wrap: break-word;
     white-space: nowrap;
