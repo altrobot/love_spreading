@@ -160,11 +160,11 @@ function shareViaKakao() {
     Kakao.Link.createTalkLinkButton({
         container: '#kakao-link-btn',
         label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx],
-        image: {
+/*        image: {
             src: screenshot.src,
             width: '300',
             height: '300'
-        },
+        }, */
         webButton: {
             text: '웹페이지 방문하기',
             url: "http://altrobot.github.io/love_spreading"
