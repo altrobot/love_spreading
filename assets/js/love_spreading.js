@@ -152,11 +152,12 @@ $(document).on("pageinit", "#main_page", function () {
 
 function shareViaKakao() {
     // @test screenshot
+    /*
     var screenshot = new Image();
     html2canvas(document.body).then(function (canvas) {
         screenshot.src = canvas.toDataURL("image/png");
     });
-
+    */
     Kakao.Link.createTalkLinkButton({
         container: '#kakao-link-btn',
         label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx],
