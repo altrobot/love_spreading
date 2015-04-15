@@ -137,7 +137,9 @@ $(document).on("pageinit", "#main_page", function () {
         hist_idx++;
     });
 
-    $("#ktalk").on('click', function (event) {
+    Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
+
+    $("#kakao-link-btn").on('click', function (event) {
         shareViaKakao();
     });
     
@@ -149,10 +151,9 @@ $(document).on("pageinit", "#main_page", function () {
 
 
 function shareViaKakao() {
-    Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
     Kakao.Link.createTalkLinkButton ({
         container: '#kakao-link-btn',
-        label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + contents + '...',
+        label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx] + '...',
         /*
         image: {
             src: firstImgSrc,
