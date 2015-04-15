@@ -19,10 +19,13 @@ var max_num_images = 0;
 /******** main page ***********************/
 // @todo mobileinit is not working? why?
 $(document).on("pageinit", "#main_page", function () {
+
     // load background images
     preload(img_list);
-    // read messages asynchronosouly
-    readMessages();
+    // read messages asynchronosouly if the messages are empty
+    if (max_num_messages == 0) {
+        readMessages();
+    }
     $('#message_box').html(messages[msg_idx]);
 
     // swiping options
@@ -189,13 +192,15 @@ function readMessages() {
         url: 'assets/data/messages_01.csv',
         success: function (data) {
             // split the data in rows
-            messages= data.split("\n");
+            messages = data.split("\n");
             // max number of messages
             max_num_messages = messages.length;
             // draw a random index
             // msg_idx = Math.floor(Math.random() * (max_num_messages - 1));
             // shuffle all messages
-            messages= shuffle(messages);
+            messages = shuffle(messages);
+            // reset the message index
+            msg_idx = 0;
         }
     });
 }
@@ -228,6 +233,7 @@ $(document).on("pageinit", "#search_page", function ()
     }
     // messages to write to HTML
     var output = '';
+
     // loop over messages
     $.each( messages, function( index, value )
     {
@@ -270,6 +276,7 @@ $(document).on("pageinit", "#history_page", function () {
             hist_idx++;
             // write the list content    
             $('#hist_list').append(output);
+            // set event handler for dynamically generated items 
             $("#hist_list").listview().listview("refresh");
         }
     }
