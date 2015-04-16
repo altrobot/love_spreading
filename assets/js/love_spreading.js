@@ -110,13 +110,6 @@ $(document).on("pageinit", "#main_page", function () {
     $('#kakao-link-btn').on('click', function (event) {
         // override the default handler
         event.preventDefault();
-        Kakao.Link.sendTalkLink ({
-                label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx],
-                webButton: {
-                    text: '모바일 웹앱방문',
-                    url: "http://altrobot.github.io/love_spreading"
-                }
-        });
 
         var output = "";
         var _receiver= "Love Spreading"
@@ -145,6 +138,17 @@ $(document).on("pageinit", "#main_page", function () {
 
         // not used but left for reference
         // $('[data-icon="delete"]').trigger("updatelayout");
+
+        alert("kakao");
+        Kakao.Link.sendTalkLink({
+            label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx]
+            /*                webButton: {
+                                text: '모바일 웹앱방문',
+                                url: "http://altrobot.github.io/love_spreading"
+                            }*/
+        });
+        alert("kakao2");
+
 
         // update the history index
         hist_idx++;
