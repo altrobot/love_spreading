@@ -104,7 +104,10 @@ $(document).on("pageinit", "#main_page", function () {
     screen.swipe(swipeOptions);
 
     // send button handler
-    $('#send').on('click', function (event) {
+    $('#kakao-link-btn').on('click', function (event) {
+
+        Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
+
         // override the default handler
         event.preventDefault();
         var output = "";
@@ -138,23 +141,16 @@ $(document).on("pageinit", "#main_page", function () {
         // update the history index
         hist_idx++;
 
+        shareViaKakao();
+
+/*
         // @test screenshot
         html2canvas(document.body).then(function (canvas) {
             screenshot.src = canvas.toDataURL("image/png");
             window.open(screenshot.src);
         });
-    });
-
-    Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
-
-    $("#kakao-link-btn").on('click', function (event) {
-        shareViaKakao();
-    });
-    
-    $('#send').socialShare({
-        social: 'facebook,google,twitter',
-    });
-    
+*/
+    });  
 });
 
 
@@ -162,13 +158,14 @@ function shareViaKakao() {
     Kakao.Link.createTalkLinkButton({
         container: '#kakao-link-btn',
         label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx],
+        /*
         image: {
             src: screenshot.src,
             width: '300',
             height: '300'
-        }, 
+        },*/ 
         webButton: {
-            text: '웹페이지 방문하기',
+            text: '모바일 웹앱방문',
             url: "http://altrobot.github.io/love_spreading"
         }
     })
