@@ -26,7 +26,6 @@ $(document).on("pageinit", "#main_page", function () {
 
     // initialize kakao link
     Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
-    shareViaKakao();
 
     // load background images
     preload(img_list);
@@ -144,7 +143,7 @@ $(document).on("pageinit", "#main_page", function () {
         // update the history index
         hist_idx++;
 
-        shareViaKakao();
+//        shareViaKakao();
 
 /*
         // @test screenshot
@@ -156,6 +155,15 @@ $(document).on("pageinit", "#main_page", function () {
     });  
 });
 
+function sendLink() {
+    Kakao.Link.sendTalkLink({
+        label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx],
+        webButton: {
+            text: '모바일 웹앱방문',
+            url: "http://altrobot.github.io/love_spreading"
+        }
+    });
+}
 
 function shareViaKakao() {
     Kakao.Link.createTalkLinkButton({
