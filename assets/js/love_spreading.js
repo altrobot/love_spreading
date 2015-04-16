@@ -105,11 +105,12 @@ $(document).on("pageinit", "#main_page", function () {
 
     // send button handler
     $('#kakao-link-btn').on('click', function (event) {
+        // override the default handler
+        event.preventDefault();
 
         Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
 
-        // override the default handler
-        event.preventDefault();
+
         var output = "";
         var _receiver= "Love Spreading"
         var _msg = messages[msg_idx];
