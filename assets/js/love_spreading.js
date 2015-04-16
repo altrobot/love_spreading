@@ -25,7 +25,7 @@ var max_num_images = 0;
 $(document).on("pageinit", "#main_page", function () {
 
     // initialize kakao link
-    Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
+    Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");   
 
     // load background images
     preload(img_list);
@@ -112,6 +112,17 @@ $(document).on("pageinit", "#main_page", function () {
     $('#kakao-link-btn').on('click', function (event) {
         // override the default handler
         event.preventDefault();
+
+        function sendLink() {
+            Kakao.Link.sendTalkLink({
+                label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx],
+                webButton: {
+                    text: '모바일 웹앱방문',
+                    url: "http://altrobot.github.io/love_spreading"
+                }
+            });
+        }
+
         var output = "";
         var _receiver= "Love Spreading"
         var _msg = messages[msg_idx];
@@ -154,16 +165,6 @@ $(document).on("pageinit", "#main_page", function () {
 */
     });  
 });
-
-function sendLink() {
-    Kakao.Link.sendTalkLink({
-        label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx],
-        webButton: {
-            text: '모바일 웹앱방문',
-            url: "http://altrobot.github.io/love_spreading"
-        }
-    });
-}
 
 function shareViaKakao() {
     Kakao.Link.createTalkLinkButton({
