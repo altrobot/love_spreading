@@ -18,11 +18,15 @@ var max_num_images = 0;
 
 //var screenshot = new Image();
 
-Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
+
 
 /******** main page ***********************/
 // @todo mobileinit is not working? why?
 $(document).on("pageinit", "#main_page", function () {
+
+    // initialize kakao link
+    Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
+    shareViaKakao();
 
     // load background images
     preload(img_list);
