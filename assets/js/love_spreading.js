@@ -23,10 +23,6 @@ var max_num_images = 0;
 /******** main page ***********************/
 // @todo mobileinit is not working? why?
 $(document).on("pageinit", "#main_page", function () {
-
-    // initialize kakao link
-    Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");   
-
     // load background images
     preload(img_list);
     // read messages asynchronosouly if the messages are empty
@@ -108,20 +104,19 @@ $(document).on("pageinit", "#main_page", function () {
     var screen = $("#main_page")
     screen.swipe(swipeOptions);
 
-    // kakao button handler
+    //// kakao button handler
+    // initialize kakao link
+    Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
     $('#kakao-link-btn').on('click', function (event) {
         // override the default handler
         event.preventDefault();
-
-        function sendLink() {
-            Kakao.Link.sendTalkLink({
+        Kakao.Link.sendTalkLink ({
                 label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx],
                 webButton: {
                     text: '모바일 웹앱방문',
                     url: "http://altrobot.github.io/love_spreading"
                 }
-            });
-        }
+        });
 
         var output = "";
         var _receiver= "Love Spreading"
