@@ -16,7 +16,9 @@ var hist_idx = 0;
 var hist_data = {};
 var max_num_images = 0;
 
-var screenshot = new Image();
+//var screenshot = new Image();
+
+Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
 
 /******** main page ***********************/
 // @todo mobileinit is not working? why?
@@ -103,14 +105,10 @@ $(document).on("pageinit", "#main_page", function () {
     var screen = $("#main_page")
     screen.swipe(swipeOptions);
 
-    // send button handler
+    // kakao button handler
     $('#kakao-link-btn').on('click', function (event) {
         // override the default handler
         event.preventDefault();
-
-        Kakao.init("d9b6ff0b565f058048aa0b2bb68a5293");
-
-
         var output = "";
         var _receiver= "Love Spreading"
         var _msg = messages[msg_idx];
@@ -164,12 +162,14 @@ function shareViaKakao() {
             src: screenshot.src,
             width: '300',
             height: '300'
-        },*/ 
+        },*/
         webButton: {
             text: '모바일 웹앱방문',
             url: "http://altrobot.github.io/love_spreading"
         }
-    })
+    });
+
+    alert("kakao");
 }
 
 
