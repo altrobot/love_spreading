@@ -21,8 +21,8 @@
 </head>
 
 <body>
-    <!-- backgroud music  -->
-    <audio src="assets/data/music_01.mp3" id="music" autoplay loop></audio>
+    <!-- backgroud music  autoplay -->
+    <audio src="assets/data/music_01.mp3" id="music"  loop></audio>
     <!---------------------- View ------------------------------>
     <!-- main page -->
     <div data-role="page" id="main_page">
@@ -67,7 +67,7 @@
         <!-- contents -->
         <div data-role="content">
             <!-- message list -->
-            <ul data-role="listview" id="msg_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search messages ...">
+            <ul data-role="listview" id="msg_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search Messages ...">
             </ul>
         </div>
         <!-- footer -->
@@ -91,7 +91,7 @@
         <!-- contents -->
         <div data-role="content">
             <!-- history list -->
-            <ul data-role="listview" id="hist_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search ...">           
+            <ul data-role="listview" id="hist_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search History ...">           
             </ul>
         </div>
         <!-- confirm popup -->
@@ -125,7 +125,7 @@
             </div>
             <div data-role="content"> 
                 <ul data-role="listview" data-inset="true">
-                    <li data-role="list-divider">Settings</li>
+                    <li data-role="list-divider">설정</li>
                     <li class="ui-field-contain">
                         <label for="flip-select-second">Music:</label>
                         <select id="flip-select-second" name="flip-select" data-role="flipswitch">
@@ -133,11 +133,9 @@
                             <option selected="">On</option>
                         </select>
                     </li>
-                    <li><a href="mailto:wehebsnet@gmail.com?subject=I share the messages">메시지 공유하기</a></li>
-                    <li>
-                        <a href="#" id="delete_history" data-role="button" data-icon="alert" data-corners="false" data-theme="a">History 전체 삭제</a>
-                    </li>
-                    <li data-role="list-divider">개발자 메세지</li>
+                    <li><a href="mailto:wehebsnet@gmail.com?subject=[Love Spreading] 메세지 공유 또는 제안">메시지 공유하기</a></li>
+                    <li><a href="#" id="delete_history" data-icon="alert" data-corners="false" data-theme="a">History 전체 삭제</a></li>
+                    <li data-role="list-divider">개발자 생각</li>
                     <li id="developer">
                         <div class="less">
                                 사람들은 사랑에 목말라 하지만 표현이 서투르거나 표현하지 않는 경향이 있습니다. 작은 사랑 메시지를 주고 받아도 주는 사람, 받는 사람 모두 사랑의 감정을 느낄 수 있습니다. 사랑의 감정이 온 지구로 우주로 퍼져나는 모습을 떠올립니다.
@@ -150,8 +148,10 @@
                                 화면을 좌우로 넘기면 메시지가 변합니다. 상하로 넘기면 배경 이미지가 변합니다. 메시지를 천천히 읽어보며 사랑의 감정을 느낍니다. 메시지 받을 사람을 떠올려 봅니다. 보내고자하는 메시지를 선택한 후에, 전송합니다. 스마트폰에서는 브라우저의 공유기능(설정->공유)을 이용하여 앱을 통해서 공유할 수 있습니다. 만트라를 외쳐보세요. 사랑합니다. 감사합니다. 용서합니다. 믿습니다.
                         </div>
                         <div class="more-less-text">More...</div>  
-                    </li>                    
-                    <li data-role="list-divider">기부하기</li>
+                    </li>                                        
+                    <li data-role="list-divider">WeHEBs.net</li>
+                    <li><a href="http://wehebs.net">좀 더 알고싶다면 클릭하세요!</a>
+                    <li data-role="list-divider">개발자에게 기부하기</li>
                     <li> 금전적 사랑을 보내실분은 클릭하세요.                                                                 
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal">
                             <input type="hidden" name="cmd" value="_s-xclick">

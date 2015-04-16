@@ -16,9 +16,6 @@ var hist_idx = 0;
 var hist_data = {};
 var max_num_images = 0;
 
-//var screenshot = new Image();
-
-
 
 /******** main page ***********************/
 // @todo mobileinit is not working? why?
@@ -141,6 +138,7 @@ $(document).on("pageinit", "#main_page", function () {
 
         /*
         // @test screenshot
+        var screenshot = new Image();
         html2canvas(document.body).then(function (canvas) {
             screenshot.src = canvas.toDataURL("image/png");
         });
@@ -151,8 +149,7 @@ $(document).on("pageinit", "#main_page", function () {
             webButton: {
                 text: '모바일 웹앱방문',
                 url: "http://altrobot.github.io/love_spreading"
-            }
-            /*,
+            }/*,
             image: {
                 src: screenshot.src,
                 width: '300',
@@ -160,35 +157,10 @@ $(document).on("pageinit", "#main_page", function () {
             }*/
         });
 
-
         // update the history index
         hist_idx++;
-
-//        shareViaKakao();
-
-
     });  
 });
-
-function shareViaKakao() {
-    Kakao.Link.createTalkLinkButton({
-        container: '#kakao-link-btn',
-        label: '[' + document.getElementsByTagName("TITLE")[0].text + ']\n' + messages[msg_idx],
-        /*
-        image: {
-            src: screenshot.src,
-            width: '300',
-            height: '300'
-        },*/
-        webButton: {
-            text: '모바일 웹앱방문',
-            url: "http://altrobot.github.io/love_spreading"
-        }
-    });
-
-    alert("kakao");
-}
-
 
 $(document).ready(function(){
 
@@ -375,6 +347,7 @@ function confirmAndDelete(listitem, transition) {
 /* settings pape */
 $(document).on("pageinit", "#settings_page", function () {
     // handling music on/off slide event
+    $('body > audio').trigger('play');
     $('[data-role="flipswitch"]').on("change", function () {
         var val = $(this).val();
         if (val == 'Off') {
