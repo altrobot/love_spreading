@@ -157,13 +157,12 @@ $(document).on("pageinit", "#main_page", function () {
             }*/
         });
 
+        // @test
+        alert("msg_idx: " + msg_idx + ", msg: " + messages[msg_idx]);
+
         // update the history index
         hist_idx++;
     });  
-});
-
-$(document).ready(function(){
-
 });
 
 
@@ -347,7 +346,7 @@ function confirmAndDelete(listitem, transition) {
 /* settings pape */
 $(document).on("pageinit", "#settings_page", function () {
     // handling music on/off slide event
-    $('body > audio').trigger('play');
+    // $('body > audio').trigger('play');
     $('[data-role="flipswitch"]').on("change", function () {
         var val = $(this).val();
         if (val == 'Off') {
