@@ -158,7 +158,7 @@ $(document).on("pageinit", "#main_page", function () {
         });
 
         // @test
-        // alert("msg_idx: " + msg_idx + ", msg: " + messages[msg_idx]);
+        alert("hist_idx: " + hist_idx + " msg_idx: " + msg_idx + ", msg: " + messages[msg_idx]);
 
         // update the history index
         hist_idx++;
@@ -437,12 +437,12 @@ function swipeStatus(event, phase, direction, distance) {
         var duration = 0;
 
         if (direction == "left") {
-            // chagne background image
-            $('#message_box').html(messages[msg_idx]);
+            // chagne message
+//            $('#message_box').html(messages[msg_idx]);
         }
         else if (direction == "right") {
-            // chagne background image
-            $('#message_box').html(messages[msg_idx]);
+            // chagne message
+//            $('#message_box').html(messages[msg_idx]);
         }
 
     }
@@ -454,6 +454,8 @@ function swipeStatus(event, phase, direction, distance) {
             if (msg_idx >= max_num_messages) {
                 msg_idx = max_num_messages - 1;
             }
+            $('#message_box').html(messages[msg_idx]);
+
 
         }
         else if (direction == "right") {
@@ -463,6 +465,8 @@ function swipeStatus(event, phase, direction, distance) {
             if (msg_idx < 0) {
                 msg_idx = 0;
             }
+            $('#message_box').html(messages[msg_idx]);
+
         }
     }
     else if (phase == "cancel") {
