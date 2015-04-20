@@ -158,7 +158,7 @@ $(document).on("pageinit", "#main_page", function () {
         });
 
         // @test
-        alert("hist_idx: " + hist_idx + " msg_idx: " + msg_idx + ", msg: " + messages[msg_idx]);
+        //alert("hist_idx: " + hist_idx + " msg_idx: " + msg_idx + ", msg: " + messages[msg_idx]);
 
         // update the history index
         hist_idx++;
