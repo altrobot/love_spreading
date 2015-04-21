@@ -272,6 +272,9 @@ $(document).on("pageinit", "#history_page", function () {
             // set event handler for dynamically generated items 
             $("#hist_list").listview().listview("refresh");
         }
+
+        // @test
+        //alert( "hist_idx: " + hist_idx );
     }
 
     // delete an item (when the page is refreshed)
@@ -331,7 +334,11 @@ function confirmAndDelete(listitem, transition) {
         // get the item id with the prefix="hist_idx"
         var css_id = listitem.attr("id");
         // remove the prefix to get the record id
-        id = css_id.replace("hist_idx", ""),
+        //        id = css_id.replace("hist_idx", ""),
+        id = css_id.replace("hist_idx", "");
+        // @test
+        //alert("css_id: " + css_id + " hist_idx: " + hist_idx + " id: " + id);
+        //alert("this will be removed " + hist_data[id]);
         delete hist_data[id];
         localStorage.setItem("history_love_spreading", JSON.stringify(hist_data));
     });
@@ -399,11 +406,11 @@ function swipeStatus(event, phase, direction, distance) {
 
         if (direction == "up") {
             // chagne background image
-            $('#main_page').css('background-image', 'url(' + img_list[img_idx] + ')');
+//            $('#main_page').css('background-image', 'url(' + img_list[img_idx] + ')');
         }
         else if (direction == "down") {
             // chagne background image
-            $('#main_page').css('background-image', 'url(' + img_list[img_idx] + ')');
+//            $('#main_page').css('background-image', 'url(' + img_list[img_idx] + ')');
         }
     }
     else if (phase == "cancel") {
@@ -419,6 +426,8 @@ function swipeStatus(event, phase, direction, distance) {
                 // disable the button
                 // $(this).addClass('ui-disabled');
             }
+            $('#main_page').css('background-image', 'url(' + img_list[img_idx] + ')');
+
         }
         else if (direction == "down") {
             // increase the message index
@@ -429,6 +438,7 @@ function swipeStatus(event, phase, direction, distance) {
                 // disable the button
                 // $(this).addClass('ui-disabled');
             }
+            $('#main_page').css('background-image', 'url(' + img_list[img_idx] + ')');
         }
     }
 
