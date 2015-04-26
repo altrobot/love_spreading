@@ -63,6 +63,10 @@
     color: #ff0000;
 }
 
+#developer_header {
+    text-decoration: none;
+}
+
 .less{
     word-wrap: break-word;
     white-space: nowrap;
