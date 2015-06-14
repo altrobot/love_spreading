@@ -1,9 +1,7 @@
 # Love Spreading
 ### 앱
  * [모바일웹 버전](https://altrobot.github.io/love_spreading): 카톡으로 내용 전송. 내용 수시 업데이트.
- 
  * [소스코드](https://github.com/altrobot/love_spreading/tree/gh-pages)
-  
  * [안드로이드앱 버전](https://play.google.com/store/apps/details?id=net.wehebs.lovespreading): 안드로이드 share 기능 
 ![](https://lh3.googleusercontent.com/edBqXbNN8HmpDbtAXo7thgZbWDGYhC4JT2_mYu2uX4qPSS2p0Fq2eIvtr3sZp-W36Tmm=h900-rw)
 
