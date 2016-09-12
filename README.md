@@ -1,4 +1,4 @@
-# Love Spreading
+# 사랑과 영혼
 ### 앱
  * [모바일웹 버전](https://altrobot.github.io/love_spreading): 카톡으로 내용 전송. 내용 수시 업데이트.
  * [소스코드](https://github.com/altrobot/love_spreading/tree/gh-pages)
