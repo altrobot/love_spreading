@@ -1,0 +1,98 @@
+﻿/******************** main page style ***********************/
+/* main page background image */
+#main_page {
+    background-image: url('../img/bg_001.jpg');
+    background-size : cover;
+}
+
+/* arrow and send buttons */
+#button_group {
+    text-align: center
+}
+
+/* main image positining*/
+#main_img {
+    position:absolute; 
+    width: 100%; 
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0.1%;
+}
+
+#message_box {
+    position: absolute;
+    top: 47%;
+    left: 10%;
+    height: 50%;
+    width: 80%;
+    text-align: center;
+    font-size: large;
+    color: #4cff00; 
+/*    color: #ffffff; */
+}
+
+/******************** search page style ***********************/
+/* search page background image */
+#search_page.ui-page {
+    background-image: url('../img/bg_search.jpg');
+    background-size : cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+/******************** history page style ***********************/
+/* history page background image */
+#history_page.ui-page {
+    background-image: url('../img/bg_history.jpg');
+    background-size : cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+/******************** settings page style ***********************/
+/* settings page background image */
+#settings_page.ui-page {
+    background-image: url('../img/bg_settings.jpg');
+    background-size : cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+#delete_history {
+    color: #ff0000;
+}
+
+#developer_header {
+    text-decoration: none;
+}
+
+.less{
+    word-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.more{
+    white-space: normal;
+}
+
+.more-less-text{
+    display: block;
+    text-align: right;
+    padding-top: 10px;
+    color: blue !important;
+    cursor: pointer;
+}
+
+#paypal {
+    float: right;
+}
+
+#kakao-link-btn {
+   padding-top: 0%;
+   padding-bottom: 0%;
+   padding-left: 0%;
+   padding-right: 0%;
+}

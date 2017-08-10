@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Love Spreading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />  
+    <!-- Korean Character Set-->
+    <meta charset="eur-kr" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/love_spreading.css" />
+    <link rel="stylesheet" href="vendors/social/stylesheets/arthref.min.css">
+    <!-- Javascripts -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="vendors/jquery/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="vendors/social/javascripts/socialShare.min.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="vendors/html2canvas/html2canvas.js"></script>
+    <script type='text/javascript' src="assets/js/love_spreading.js"></script>
+
+</head>
+
+<body>
+    <!-- backgroud music  autoplay -->
+    <audio src="assets/data/bg_music.mp3" id="music"  autoplay loop></audio>
+    <!---------------------- View ------------------------------>
+    <!-- main page -->
+    <div data-role="page" id="main_page">
+        <!-- no header -->
+        <div data-role="header">
+        </div>
+        <!-- contents -->
+        <div data-role="content"> 
+            <img src="assets/img/love1.png" id="main_img" /> 
+            <div id="message_box">
+            </div>
+        </div>
+        <!-- footer -->
+        <div data-role="footer" id="footer" data-theme="b" data-position="fixed">
+            <!-- Arrow and Send Buttons -->
+            <div id="button_group">
+                <a href="#" id="next_bg" data-role="button" data-icon="arrow-d" data-iconpos="notext" data-theme="d">Next</a>
+                <a href="#" id="prev_msg" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="d">Previous</a>
+<!--                <a href="#" id="send" data-role="button" data-mini="true" data-inline="true" data-theme="e">Send</a>  -->
+                <a href="#" id="kakao-link-btn" data-role="button"><img src="vendors/kakao/kakaotalk.png" width="32"></a>  
+<!--                <a href="#" id="kakao-link-btn" data-role="button" data-iconpos="notext" data-theme="d"><img src="vendors/kakao/kakaotalk.png" height="32"></a>    -->
+                <a href="#" id="next_msg" data-role="button" data-icon="arrow-r" data-iconpos="notext" data-theme="d">Next</a>
+                <a href="#" id="prev_bg" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-theme="d">Previous</a>
+            </div>
+            <!-- Navigation Bar -->
+            <div data-role="navbar" id="navbar">
+                <ul>
+                    <li><a href="#" data-target="main" data-icon="heart" id="main" class="ui-btn-active"></a></li>
+                    <li><a href="#search_page" data-target="search" data-icon="search" id="search"></a></li>
+                    <li><a href="#history_page" data-target="history" data-icon="bullets" id="history"></a></li>
+                    <li><a href="#settings_page" data-target="settings" data-icon="gear" id="settings"></a></li>
+                </ul>
+            </div>         
+        </div>
+    </div>
+
+    <!-- search page -->
+    <div data-role="page" id="search_page">
+        <!-- no header -->
+        <div data-role="header">
+        </div>
+        <!-- contents -->
+        <div data-role="content">
+            <!-- message list -->
+            <ul data-role="listview" id="msg_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search Messages ...">
+            </ul>
+        </div>
+        <!-- footer -->
+        <div data-role="footer" id="footer" data-theme="b" data-position="fixed">
+            <div data-role="navbar" id="navbar">
+                <ul>
+                    <li><a href="#main_page" data-target="main" data-icon="heart" id="main"></a></li>
+                    <li><a href="#" data-target="search" data-icon="search" id="search" class="ui-btn-active"></a></li>
+                    <li><a href="#history_page" data-target="history" data-icon="bullets" id="history"></a></li>
+                    <li><a href="#settings_page" data-target="settings" data-icon="gear" id="settings"></a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+    <!-- history page -->
+    <div data-role="page" id="history_page">
+        <!-- no header -->
+        <div data-role="header">
+        </div>
+        <!-- contents -->
+        <div data-role="content">
+            <!-- history list -->
+            <ul data-role="listview" id="hist_list" data-theme="d" data-dividertheme="e" data-filter="true" data-filter-theme="b" data-filter-placeholder="Search History ...">           
+            </ul>
+        </div>
+        <!-- confirm popup -->
+        <div id="confirm_delete_item" class="ui-content" data-role="popup" data-theme="b">
+            <p id="question">Are you sure you want to delete?</p>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a id="yes" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Yes</a>
+                </div>
+                <div class="ui-block-b">
+                    <a id="cancel" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Cancel</a>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" id="footer" data-theme="b" data-position="fixed">
+            <div data-role="navbar" id="navbar">
+                <ul>
+                    <li><a href="#main_page" data-target="main" data-icon="heart" id="main"></a></li>
+                    <li><a href="#search_page" data-target="search" data-icon="search" id="search"></a></li>
+                    <li><a href="#" data-target="history" data-icon="bullets" id="history" class="ui-btn-active"></a></li>
+                    <li><a href="#settings_page" data-target="settings" data-icon="gear" id="settings"></a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+
+        <!-- setting page -->
+        <div data-role="page" id="settings_page">
+            <div data-role="header">
+            </div>
+            <div data-role="content"> 
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">설정 - 음악, 기록, 피드백</li>
+                    <li class="ui-field-contain">
+                        <select id="flip-7" name="flip-7" data-role="flipswitch" data-mini="true">
+                            <option>Off</option>
+                            <option selected="">On</option>
+                        </select>
+                    </li>
+                    <li><a href="mailto:wehebsnet@gmail.com?subject=[Love Spreading] 메세지 공유 또는 제안">메시지 공유하기</a></li>
+                    <li><a href="#" id="delete_history" data-icon="alert" data-corners="false" data-theme="a">History 전체 삭제</a></li>
+                    <li data-role="list-divider"><a href="http://wehebs.net" id="developer_header">개발자 생각</a></li>
+                    <li id="developer">
+                        <div class="less">
+                                사람들은 사랑에 목말라 하지만 표현이 서투르거나 표현하지 않는 경향이 있습니다. 작은 사랑 메시지를 주고 받아도 주는 사람, 받는 사람 모두 사랑의 감정을 느낄 수 있습니다. 사랑의 감정이 온 지구로 우주로 퍼져나는 모습을 떠올립니다.
+                        </div>
+                        <div class="more-less-text">More...</div>
+                    </li>
+                    <li data-role="list-divider">사용법</li>
+                    <li id="usage">
+                        <div class="less">
+                                화면을 좌우로 넘기면 메시지가 변합니다. 상하로 넘기면 배경 이미지가 변합니다. 메시지를 천천히 읽어보며 사랑의 감정을 느낍니다. 메시지 받을 사람을 떠올려 봅니다. 보내고자하는 메시지를 선택한 후에, 전송합니다. 스마트폰에서는 브라우저의 공유기능(설정->공유)을 이용하여 앱을 통해서 공유할 수 있습니다. 만트라를 외쳐보세요. 사랑합니다. 감사합니다. 용서합니다. 믿습니다.
+                        </div>
+                        <div class="more-less-text">More...</div>  
+                    </li>                                        
+                    <li data-role="list-divider">안드로이드앱 버전</li>
+                    <li><a href="https://play.google.com/store/apps/details?id=net.wehebs.lovespreading">앱 받으러 가기</a>
+                    <li data-role="list-divider">개발자에게 기부하기(bitcoins)</li>
+                    <li>1E3ZXixbDP64B14dMiR2xqaDq5M6GJ5m5N</li>
+                </ul>             
+            </div>
+
+            <!-- confirm popup -->
+            <div id="confirm_delete_all" class="ui-content" data-role="popup" data-theme="b">
+                <p id="question">Are you sure you want to delete?</p>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a id="yes" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Yes</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a id="cancel" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Cancel</a>
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div data-role="footer" id="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" id="navbar">
+                    <ul>
+                        <li><a href="#main_page" data-target="main" data-icon="heart" id="main"></a></li>
+                        <li><a href="#search_page" data-target="search" data-icon="search" id="search"></a></li>
+                        <li><a href="#history_page" data-target="history" data-icon="bullets" id="history"></a></li>
+                        <li><a href="#" data-target="settings" data-icon="gear" id="settings" class="ui-btn-active"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+</html>
+
+
